@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swarmada — Kubernetes-native orchestration for robot fleets</title>
+<meta name="description" content="Swarmada is a vendor-neutral, Kubernetes-native control plane for orchestrating fleets of heterogeneous physical robots. Apache 2.0, pre-release.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      swarmada
+    </a>
+    <nav class="site-nav">
+      <a href="https://github.com/swarmada/swarmada">Repo</a>
+      <a href="https://github.com/swarmada/swarmada/blob/main/docs/architecture.md">Docs</a>
+      <a href="https://github.com/swarmada/swarmada/blob/main/rfcs/RFC-0001-overview.md">RFC-0001</a>
+      <a class="nav-cta" href="https://github.com/swarmada/swarmada">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Apache 2.0 · pre-release · CNCF Sandbox candidate</p>
+      <h1>The fleet orchestration layer has no neutral standard yet.</h1>
+      <p class="hero-sub">
+        Swarmada is a vendor-neutral, Kubernetes-native control plane for coordinating
+        fleets of heterogeneous robots — the way Kubernetes coordinates containers.
+        Declare the fleet's desired state as custom resources; Swarmada reconciles
+        robots from any manufacturer toward it, under one standardized API.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/swarmada/swarmada">View on GitHub</a>
+        <a class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/rfcs/RFC-0001-overview.md">Read RFC-0001</a>
+      </div>
+      <pre class="hero-code" aria-label="quick start"><code><span class="c-com"># three commands, one control plane</span>
+kind create cluster --name swarmada-dev
+make install   <span class="c-com"># generate and apply the CRDs</span>
+make run       <span class="c-com"># run the control plane against your kubecontext</span></code></pre>
+    </div>
+  </section>
+
+  <section class="gap">
+    <div class="wrap">
+      <h2>Where Swarmada sits in the stack</h2>
+      <p class="section-lede">
+        The robotics software stack already has neutral, open reference points at
+        most layers. One tier does not.
+      </p>
+      <div class="stack">
+        <div class="stack-row">
+          <span class="stack-layer">Application programming</span>
+          <span class="stack-owner">Intrinsic Flowstate</span>
+        </div>
+        <div class="stack-row stack-row-gap">
+          <span class="stack-layer">Fleet orchestration</span>
+          <span class="stack-owner stack-owner-gap">no vendor-neutral, cloud-native standard — <strong>Swarmada</strong></span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-layer">Physics simulation</span>
+          <span class="stack-owner">Newton (Linux Foundation)</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-layer">Perception &amp; navigation</span>
+          <span class="stack-owner">ROS 2</span>
+        </div>
+        <div class="stack-row">
+          <span class="stack-layer">Hardware &amp; model runtime</span>
+          <span class="stack-owner">NVIDIA Isaac / GR00T</span>
+        </div>
+      </div>
+      <p class="section-note">
+        A facility running automation today typically operates robots from three to
+        five manufacturers at once, each with its own dashboard, fleet API, and
+        update toolchain — with no single source of truth for fleet state. Open RMF
+        is the closest existing project to this layer, but it is now controlled by a
+        single vendor. Swarmada is built as an independent, Apache-2.0 project aimed
+        at CNCF Sandbox, not a vendor's roadmap.
+      </p>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="section-lede">
+        Operators declare intent as Kubernetes custom resources; controllers
+        reconcile the fleet toward it. A per-manufacturer <strong>Fleet Adapter</strong>
+        translates one standardized gRPC contract into each vendor's native API, so
+        adding a robot family is additive rather than a change to the core.
+      </p>
+      <table class="analogy">
+        <thead>
+          <tr><th>Kubernetes</th><th>Swarmada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Node</td><td><code>Robot</code> / <code>RobotClass</code></td></tr>
+          <tr><td>Pod / Deployment</td><td><code>FleetTask</code></td></tr>
+          <tr><td>Namespace</td><td><code>FleetZone</code></td></tr>
+          <tr><td>Rolling update</td><td><code>FirmwareRollout</code> / <code>ModelRollout</code></td></tr>
+          <tr><td><code>kubectl</code></td><td><code>swarmctl</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="yaml-sample">
+    <div class="wrap">
+      <h2>Declare the fleet, not the choreography</h2>
+      <p class="section-lede">
+        A zone, a robot, and a task — the same three primitives that run in the
+        project's simulation scenarios.
+      </p>
+      <pre class="code-block"><code><span class="c-key">apiVersion</span>: <span class="c-str">swarmada.io/v1</span>
+<span class="c-key">kind</span>: <span class="c-str">FleetZone</span>
+<span class="c-key">metadata</span>:
+  <span class="c-key">name</span>: <span class="c-str">warehouse-a</span>
+<span class="c-key">spec</span>:
+  <span class="c-key">description</span>: <span class="c-str">"Receiving and staging area — east wing"</span>
+  <span class="c-key">waypoints</span>:
+    - <span class="c-key">name</span>: <span class="c-str">charging-bay</span>
+      <span class="c-key">x</span>: <span class="c-num">1.1</span>
+      <span class="c-key">yPos</span>: <span class="c-num">1.1</span>
+---
+<span class="c-key">apiVersion</span>: <span class="c-str">swarmada.io/v1</span>
+<span class="c-key">kind</span>: <span class="c-str">Robot</span>
+<span class="c-key">metadata</span>:
+  <span class="c-key">name</span>: <span class="c-str">sim-robot-001</span>
+  <span class="c-key">namespace</span>: <span class="c-str">warehouse-a</span>
+<span class="c-key">spec</span>:
+  <span class="c-key">manufacturer</span>: <span class="c-str">Simulated</span>
+  <span class="c-key">model</span>: <span class="c-str">SimBot-v1</span>
+  <span class="c-key">fleetAdapterEndpoint</span>: <span class="c-str">"sim-robot-001.warehouse-a.svc:9090"</span>
+  <span class="c-key">zone</span>: <span class="c-str">warehouse-a</span>
+---
+<span class="c-key">apiVersion</span>: <span class="c-str">swarmada.io/v1</span>
+<span class="c-key">kind</span>: <span class="c-str">FleetTask</span>
+<span class="c-key">metadata</span>:
+  <span class="c-key">name</span>: <span class="c-str">deliver-pallet-001</span>
+  <span class="c-key">namespace</span>: <span class="c-str">warehouse-a</span>
+<span class="c-key">spec</span>:
+  <span class="c-key">type</span>: <span class="c-str">Navigate</span>
+  <span class="c-key">zone</span>: <span class="c-str">warehouse-a</span>
+  <span class="c-key">destination</span>: <span class="c-str">staging-shelf-a</span>
+  <span class="c-key">priority</span>: <span class="c-num">70</span>
+  <span class="c-key">requiredCapabilities</span>:
+    - <span class="c-str">navigation</span></code></pre>
+      <p class="section-note">
+        <code>kubectl apply -f</code> creates the zone, admits the robots, and the
+        task controller assigns work to whichever robot meets the required
+        capabilities. The full sample runs end-to-end in
+        <a href="https://github.com/swarmada/swarmada/tree/main/config/samples">config/samples</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="status">
+    <div class="wrap">
+      <h2>Status</h2>
+      <p class="section-lede">Pre-release. Public claims track the code, not the roadmap.</p>
+      <div class="status-grid">
+        <div class="status-card">
+          <h3>API</h3>
+          <p>All thirteen CRDs are defined and generate under <code>swarmada.io/v1</code>.</p>
+        </div>
+        <div class="status-card">
+          <h3>Controllers</h3>
+          <p>Reconciliation is implemented for <code>Robot</code> and <code>FleetTask</code>; the remaining CRDs are specified with controllers in progress.</p>
+        </div>
+        <div class="status-card">
+          <h3>Adapters</h3>
+          <p>A ROS 2 Fleet Adapter is validated in simulation. The Fleet Adapter conformance suite is follow-on work.</p>
+        </div>
+      </div>
+      <p class="section-note">
+        The architecture is documented as designed; this list is the authoritative
+        statement of what runs today. See the full
+        <a href="https://github.com/swarmada/swarmada#status">Status section</a> in the repo README.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Get involved</h2>
+      <p class="section-lede">
+        Swarmada is developed in the open under Apache 2.0. Contributions,
+        Fleet Adapter implementations, and design-partner conversations are
+        welcome.
+      </p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://github.com/swarmada/swarmada">Star / clone the repo</a>
+        <a class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/CONTRIBUTING.md">Read CONTRIBUTING.md</a>
+        <a class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/rfcs/dist/RFC-0001-core-spec.md">Read the full spec</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>Swarmada — Apache License 2.0</span>
+    <nav>
+      <a href="https://github.com/swarmada/swarmada/blob/main/LICENSE">License</a>
+      <a href="https://github.com/swarmada/swarmada/blob/main/GOVERNANCE.md">Governance</a>
+      <a href="https://github.com/swarmada/swarmada/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+      <a href="https://github.com/swarmada/swarmada/blob/main/SECURITY.md">Security</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
