@@ -1,0 +1,33 @@
+Swarmada marks — asset license
+Applies to every file in this directory (marks/), v1.2 and prior.
+
+These are trademark and logo files. They are NOT covered by the license
+that applies to Swarmada source code elsewhere in this project (see this
+repository's own LICENSE, where one exists) — that license grants no rights
+to the Swarmada name or marks.
+
+Copyright in these files is retained by their contributors.
+
+Permission is granted to reproduce and display these files, UNMODIFIED, for
+the purpose of referring to or linking to the Swarmada project, subject to
+the Swarmada Trademark & Logo Policy (TRADEMARKS.md, in this directory).
+
+No permission is granted, under this license, to:
+  - modify, recolor, distort, or otherwise alter these files outside the
+    colorways and forms defined in Swarmada_Mark_System_v1_2.html;
+  - use these files, or a derivative of them, as or within another
+    product's, company's, or project's own logo or trademark;
+  - use these files in a way that states or implies Swarmada's endorsement,
+    certification, or affiliation where none exists;
+  - use these files in connection with paid merchandise, products, or
+    services, without separate permission.
+
+These marks are presently unregistered and under active trademark
+clearance review (see Design_Code_Search_Runbook.md). This notice is an
+interim protective policy and is not a representation that registration
+has been sought or granted, and does not waive any common-law rights.
+
+This license may be revised, including on trademark registration or on
+donation of the marks to a neutral body (for example, a CNCF Sandbox
+donation). Questions or permission requests: open an issue in the
+project's repository.
