@@ -5,10 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Swarmada — Kubernetes-native orchestration for robot fleets</title>
 <meta name="description" content="Swarmada is a vendor-neutral, Kubernetes-native control plane for orchestrating fleets of heterogeneous physical robots. Apache 2.0, pre-release.">
+<link rel="canonical" href="https://swarmada.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://swarmada.io/">
+<meta property="og:title" content="Swarmada — Kubernetes-native orchestration for robot fleets">
+<meta property="og:description" content="Swarmada is a vendor-neutral, Kubernetes-native control plane for orchestrating fleets of heterogeneous physical robots. Apache 2.0, pre-release.">
+<meta property="og:image" content="https://swarmada.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swarmada — Kubernetes-native orchestration for robot fleets">
+<meta name="twitter:description" content="Swarmada is a vendor-neutral, Kubernetes-native control plane for orchestrating fleets of heterogeneous physical robots. Apache 2.0, pre-release.">
+<meta name="twitter:image" content="https://swarmada.io/og-image.png">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/svg+xml" href="marks/swarmada-echelon-color.svg">
 <script data-goatcounter="https://swarmada.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Swarmada",
+  "description": "Vendor-neutral, Kubernetes-native control plane for orchestrating fleets of heterogeneous physical robots.",
+  "codeRepository": "https://github.com/swarmada/swarmada",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "programmingLanguage": ["Go", "Python"],
+  "applicationCategory": "Robotics fleet orchestration",
+  "url": "https://swarmada.io/",
+  "isAccessibleForFree": true
+}
+</script>
 </head>
 <body>
 
@@ -18,12 +44,16 @@
       <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 96 96" fill="#0E8FA3"><path d="M 14.49 88.20 L 12.01 86.14 L 8.30 86.14 L 8.30 90.27 L 12.02 90.26 Z"/><path d="M 25.03 86.16 L 22.14 84.74 L 18.53 85.62 L 19.50 89.63 L 23.11 88.75 Z"/><path d="M 35.08 81.02 L 31.90 80.50 L 28.69 82.38 L 30.78 85.94 L 33.99 84.05 Z"/><path d="M 36.56 67.09 L 36.11 71.47 L 32.41 71.31 L 32.19 67.61 Z"/><path d="M 43.12 73.54 L 39.91 73.86 L 37.31 76.51 L 40.25 79.41 L 42.85 76.76 Z"/><path d="M 41.48 60.06 L 41.81 64.45 L 38.14 64.94 L 37.27 61.34 Z"/><path d="M 49.07 65.26 L 45.97 66.14 L 43.87 69.20 L 47.28 71.53 L 49.38 68.47 Z"/><path d="M 45.67 52.55 L 46.41 56.89 L 42.81 57.72 L 41.60 54.22 Z"/><path d="M 53.72 57.00 L 50.72 58.17 L 48.92 61.42 L 52.53 63.42 L 54.33 60.17 Z"/><path d="M 49.58 44.94 L 50.45 49.26 L 46.86 50.20 L 45.55 46.74 Z"/><path d="M 57.75 49.16 L 54.78 50.42 L 53.08 53.72 L 56.75 55.61 L 58.45 52.31 Z"/><path d="M 53.68 37.40 L 54.42 41.75 L 50.81 42.58 L 49.60 39.08 Z"/><path d="M 61.72 41.86 L 58.72 43.03 L 56.92 46.28 L 60.53 48.28 L 62.33 45.03 Z"/><path d="M 58.43 30.24 L 58.75 34.63 L 55.08 35.12 L 54.21 31.52 Z"/><path d="M 66.01 35.44 L 62.91 36.31 L 60.81 39.38 L 64.22 41.71 L 66.32 38.65 Z"/><path d="M 64.29 23.98 L 63.83 28.36 L 60.13 28.20 L 59.91 24.50 Z"/><path d="M 70.84 30.44 L 67.63 30.76 L 65.02 33.40 L 67.96 36.30 L 70.57 33.65 Z"/><path d="M 68.29 10.66 L 59.03 12.29 L 62.26 14.19 L 62.34 17.94 Z"/><path d="M 71.54 19.42 L 69.97 23.53 L 66.44 22.41 L 67.19 18.78 Z"/><path d="M 76.19 27.35 L 73.01 26.82 L 69.81 28.70 L 71.89 32.26 L 75.10 30.39 Z"/><path d="M 79.27 7.83 L 69.93 6.72 L 72.48 9.47 L 71.48 13.09 Z"/><path d="M 79.87 17.15 L 77.17 20.63 L 74.12 18.54 L 75.87 15.29 Z"/><path d="M 82.03 26.09 L 79.14 24.67 L 75.53 25.54 L 76.50 29.56 L 80.11 28.68 Z"/><path d="M 90.01 7.80 L 81.19 4.53 L 83.02 7.80 L 81.20 11.08 Z"/><path d="M 88.40 17.00 L 84.96 19.75 L 82.48 17.00 L 84.96 14.25 Z"/><path d="M 88.41 26.20 L 85.93 24.14 L 82.21 24.14 L 82.22 28.27 L 85.93 28.26 Z"/></svg></span>
       <span class="brand-wm">Swarmada<em>coordinate. orchestrate. evolve.</em></span>
     </a>
-    <nav class="site-nav">
-      <a data-goatcounter-click="out-repo-nav" data-goatcounter-title="Repo (nav)" href="https://github.com/swarmada/swarmada">Repo</a>
-      <a data-goatcounter-click="out-architecture" data-goatcounter-title="Docs / architecture" href="https://github.com/swarmada/swarmada/blob/main/docs/architecture.md">Docs</a>
-      <a data-goatcounter-click="out-rfc-overview" data-goatcounter-title="RFC-0001 overview (nav)" href="https://github.com/swarmada/swarmada/blob/main/rfcs/RFC-0001-overview.md">RFC-0001</a>
-      <a data-goatcounter-click="out-repo-nav-cta" data-goatcounter-title="GitHub (nav CTA)" class="nav-cta" href="https://github.com/swarmada/swarmada">GitHub ↗</a>
-    </nav>
+    <div class="nav-wrap">
+      <nav class="site-nav" id="site-nav">
+        <a data-goatcounter-click="nav-get-involved" data-goatcounter-title="Get involved (nav)" href="/get-involved/">Get involved</a>
+        <a data-goatcounter-click="out-repo-nav" data-goatcounter-title="Repo (nav)" href="https://github.com/swarmada/swarmada">Repo</a>
+        <a data-goatcounter-click="out-architecture" data-goatcounter-title="Docs / architecture" href="https://github.com/swarmada/swarmada/blob/main/docs/architecture.md">Docs</a>
+        <a data-goatcounter-click="out-rfc-overview" data-goatcounter-title="RFC-0001 overview (nav)" href="https://github.com/swarmada/swarmada/blob/main/rfcs/RFC-0001-overview.md">RFC-0001</a>
+        <a data-goatcounter-click="out-repo-nav-cta" data-goatcounter-title="GitHub (nav CTA)" class="nav-cta" href="https://github.com/swarmada/swarmada">GitHub ↗</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu"><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -42,6 +72,7 @@
       <div class="hero-actions">
         <a data-goatcounter-click="out-repo-hero" data-goatcounter-title="View on GitHub (hero)" class="btn btn-primary" href="https://github.com/swarmada/swarmada">View on GitHub</a>
         <a data-goatcounter-click="out-rfc-overview-hero" data-goatcounter-title="Read RFC-0001 (hero)" class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/rfcs/RFC-0001-overview.md">Read RFC-0001</a>
+        <a data-goatcounter-click="hero-get-involved" data-goatcounter-title="Get involved (hero)" class="btn btn-secondary" href="/get-involved/">Get involved</a>
       </div>
       <pre class="hero-code" aria-label="quick start"><code><span class="c-com"># three commands, one control plane</span>
 kind create cluster --name swarmada-dev
@@ -50,7 +81,7 @@ make run       <span class="c-com"># run the control plane against your kubecont
     </div>
   </section>
 
-  <section class="gap">
+  <section class="gap" id="stack">
     <div class="wrap">
       <h2>Where Swarmada sits in the stack</h2>
       <p class="section-lede">
@@ -90,7 +121,7 @@ make run       <span class="c-com"># run the control plane against your kubecont
     </div>
   </section>
 
-  <section class="how">
+  <section class="how" id="how-it-works">
     <div class="wrap">
       <h2>How it works</h2>
       <p class="section-lede">
@@ -105,16 +136,23 @@ make run       <span class="c-com"># run the control plane against your kubecont
         </thead>
         <tbody>
           <tr><td>Node</td><td><code>Robot</code> / <code>RobotClass</code></td></tr>
-          <tr><td>Pod / Deployment</td><td><code>FleetTask</code></td></tr>
+          <tr><td>Pod / Deployment</td><td><code>FleetAction</code> / <code>FleetTask</code></td></tr>
           <tr><td>Namespace</td><td><code>FleetZone</code></td></tr>
           <tr><td>Rolling update</td><td><code>FirmwareRollout</code> / <code>ModelRollout</code></td></tr>
           <tr><td><code>kubectl</code></td><td><code>swarmctl</code></td></tr>
         </tbody>
       </table>
+      <p class="section-note">
+        A <code>FleetZone</code> is the unit of physical space and policy, a
+        <code>Robot</code> is the unit of capacity, and a <code>FleetTask</code> is a
+        composite objective that decomposes into <code>FleetAction</code>s — the
+        atomic unit of dispatch. The task itself never crosses the Fleet Adapter
+        boundary; its actions do.
+      </p>
     </div>
   </section>
 
-  <section class="yaml-sample">
+  <section class="yaml-sample" id="declare">
     <div class="wrap">
       <h2>Declare the fleet, not the choreography</h2>
       <p class="section-lede">
@@ -125,12 +163,13 @@ make run       <span class="c-com"># run the control plane against your kubecont
 <span class="c-key">kind</span>: <span class="c-str">FleetZone</span>
 <span class="c-key">metadata</span>:
   <span class="c-key">name</span>: <span class="c-str">warehouse-a</span>
+  <span class="c-key">namespace</span>: <span class="c-str">warehouse-a</span>
 <span class="c-key">spec</span>:
-  <span class="c-key">description</span>: <span class="c-str">"Receiving and staging area — east wing"</span>
+  <span class="c-key">displayName</span>: <span class="c-str">"Receiving and staging area — east wing"</span>
   <span class="c-key">waypoints</span>:
     - <span class="c-key">name</span>: <span class="c-str">charging-bay</span>
       <span class="c-key">x</span>: <span class="c-num">1.1</span>
-      <span class="c-key">yPos</span>: <span class="c-num">1.1</span>
+      <span class="c-key">"y"</span>: <span class="c-num">1.1</span>
 ---
 <span class="c-key">apiVersion</span>: <span class="c-str">swarmada.io/v1</span>
 <span class="c-key">kind</span>: <span class="c-str">Robot</span>
@@ -140,31 +179,38 @@ make run       <span class="c-com"># run the control plane against your kubecont
 <span class="c-key">spec</span>:
   <span class="c-key">manufacturer</span>: <span class="c-str">Simulated</span>
   <span class="c-key">model</span>: <span class="c-str">SimBot-v1</span>
-  <span class="c-key">fleetAdapterEndpoint</span>: <span class="c-str">"sim-robot-001.warehouse-a.svc:9090"</span>
+  <span class="c-key">adapter</span>:
+    <span class="c-key">name</span>: <span class="c-str">sim-fleet-adapter</span>
+    <span class="c-key">version</span>: <span class="c-str">"0.1.0"</span>
   <span class="c-key">zone</span>: <span class="c-str">warehouse-a</span>
+  <span class="c-key">capabilities</span>:
+    - <span class="c-key">name</span>: <span class="c-str">navigation</span>
+      <span class="c-key">type</span>: <span class="c-str">hardware-native</span>
+      <span class="c-key">pauseable</span>: <span class="c-str">false</span>
 ---
 <span class="c-key">apiVersion</span>: <span class="c-str">swarmada.io/v1</span>
-<span class="c-key">kind</span>: <span class="c-str">FleetTask</span>
+<span class="c-key">kind</span>: <span class="c-str">FleetAction</span>
 <span class="c-key">metadata</span>:
   <span class="c-key">name</span>: <span class="c-str">deliver-pallet-001</span>
   <span class="c-key">namespace</span>: <span class="c-str">warehouse-a</span>
 <span class="c-key">spec</span>:
   <span class="c-key">type</span>: <span class="c-str">Navigate</span>
   <span class="c-key">zone</span>: <span class="c-str">warehouse-a</span>
-  <span class="c-key">destination</span>: <span class="c-str">staging-shelf-a</span>
-  <span class="c-key">priority</span>: <span class="c-num">70</span>
+  <span class="c-key">priority</span>: <span class="c-str">High</span>
   <span class="c-key">requiredCapabilities</span>:
     - <span class="c-str">navigation</span></code></pre>
       <p class="section-note">
-        <code>kubectl apply -f</code> creates the zone, admits the robots, and the
-        task controller assigns work to whichever robot meets the required
-        capabilities. The full sample runs end-to-end in
-        <a data-goatcounter-click="out-samples" data-goatcounter-title="config/samples" href="https://github.com/swarmada/swarmada/tree/main/config/samples">config/samples</a>.
+        <code>kubectl apply -f</code> creates the zone and the robots; the robots'
+        declared capabilities determine which one the <code>FleetAction</code> is
+        assigned to. This excerpt is trimmed from
+        <a data-goatcounter-click="out-samples" data-goatcounter-title="config/samples" href="https://github.com/swarmada/swarmada/blob/main/config/samples/demo_a.yaml">config/samples/demo_a.yaml</a>,
+        which runs end-to-end — including task composition and fault recovery — in
+        <a data-goatcounter-click="out-samples-dir" data-goatcounter-title="config/samples dir" href="https://github.com/swarmada/swarmada/tree/main/config/samples">config/samples</a>.
       </p>
     </div>
   </section>
 
-  <section class="status">
+  <section class="status" id="status">
     <div class="wrap">
       <h2>Status</h2>
       <p class="section-lede">Pre-release. Public claims track the code, not the roadmap.</p>
@@ -175,22 +221,23 @@ make run       <span class="c-com"># run the control plane against your kubecont
         </div>
         <div class="status-card">
           <h3>Controllers</h3>
-          <p>Reconciliation is implemented for <code>Robot</code> and <code>FleetTask</code>; the remaining CRDs are specified with controllers in progress.</p>
+          <p>Reconciliation is implemented, wired into the manager, and tested for all thirteen CRDs, including capability derivation, assignment/preemption, dependency-graph composition with saga compensation, and fail-closed signature verification.</p>
         </div>
         <div class="status-card">
           <h3>Adapters</h3>
-          <p>A ROS 2 Fleet Adapter is validated in simulation. The Fleet Adapter conformance suite is follow-on work.</p>
+          <p>An executable C0–C16 conformance harness is in-tree. Three reference adapters — ROS 2, VDA5050, and MAVLink — are maintained in their own repositories and clone in via <code>make adapters</code>.</p>
         </div>
       </div>
       <p class="section-note">
-        The architecture is documented as designed; this list is the authoritative
-        statement of what runs today. See the full
+        All validation to date is in simulation; no physical hardware validation has
+        been done. The architecture is documented as designed; this list is the
+        authoritative statement of what runs today. See the full
         <a data-goatcounter-click="out-status" data-goatcounter-title="Status section" href="https://github.com/swarmada/swarmada#status">Status section</a> in the repo README.
       </p>
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="get-involved">
     <div class="wrap cta-inner">
       <h2>Get involved</h2>
       <p class="section-lede">
@@ -199,7 +246,8 @@ make run       <span class="c-com"># run the control plane against your kubecont
         welcome.
       </p>
       <div class="cta-actions">
-        <a data-goatcounter-click="out-repo-cta" data-goatcounter-title="Star / clone (footer CTA)" class="btn btn-primary" href="https://github.com/swarmada/swarmada">Star / clone the repo</a>
+        <a data-goatcounter-click="cta-get-involved" data-goatcounter-title="Ways to take part (CTA)" class="btn btn-primary" href="/get-involved/">Ways to take part</a>
+        <a data-goatcounter-click="out-repo-cta" data-goatcounter-title="Star / clone (footer CTA)" class="btn btn-secondary" href="https://github.com/swarmada/swarmada">Star / clone the repo</a>
         <a data-goatcounter-click="out-contributing" data-goatcounter-title="CONTRIBUTING.md" class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/CONTRIBUTING.md">Read CONTRIBUTING.md</a>
         <a data-goatcounter-click="out-rfc-spec" data-goatcounter-title="Full spec" class="btn btn-secondary" href="https://github.com/swarmada/swarmada/blob/main/rfcs/dist/RFC-0001-core-spec.md">Read the full spec</a>
       </div>
@@ -215,6 +263,8 @@ make run       <span class="c-com"># run the control plane against your kubecont
       Swarmada — Apache License 2.0
     </span>
     <nav>
+      <a data-goatcounter-click="out-issues" data-goatcounter-title="Contact (footer)" href="https://github.com/swarmada/swarmada/issues">Contact</a>
+      <a data-goatcounter-click="out-email" data-goatcounter-title="Email (footer)" href="mailto:maintainers@swarmada.io">maintainers@swarmada.io</a>
       <a data-goatcounter-click="out-license" data-goatcounter-title="License" href="https://github.com/swarmada/swarmada/blob/main/LICENSE">License</a>
       <a data-goatcounter-click="out-governance" data-goatcounter-title="Governance" href="https://github.com/swarmada/swarmada/blob/main/GOVERNANCE.md">Governance</a>
       <a data-goatcounter-click="out-coc" data-goatcounter-title="Code of Conduct" href="https://github.com/swarmada/swarmada/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
@@ -222,6 +272,30 @@ make run       <span class="c-com"># run the control plane against your kubecont
     </nav>
   </div>
 </footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!toggle || !nav) return;
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('nav-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.classList.contains('nav-open')) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    nav.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+})();
+</script>
 
 </body>
 </html>
